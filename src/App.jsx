@@ -1,17 +1,39 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import Navbar from './components/layout/Navbar';
 import Home from './pages/Home/Home';
+import Shop from './pages/Shop/Shop';
+import Cart from './pages/Cart/Cart';
+import Member from './pages/Member/Member';
+import Checkout from './pages/Checkout/Checkout';
+import { CartProvider } from './contexts/CartContext';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="min-h-screen bg-neutral-900 font-sans">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <div className="min-h-screen bg-neutral-900 font-sans">
+          <Navbar />
+          <Toaster 
+            position="bottom-right" 
+            toastOptions={{
+              style: {
+                background: '#1f2937',
+                color: '#fff',
+                border: '1px solid #3f3f46',
+              }
+            }} 
+          />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/cart" element={<Cart />} /> 
+            <Route path="/member" element={<Member />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </CartProvider>
   )
 }
 
