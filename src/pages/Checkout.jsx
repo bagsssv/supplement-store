@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { CartContext } from '../../contexts/CartContext';
-import { formatRupiah } from '../../utils/formatCurrency';
+import { CartContext } from '../contexts/CartContext';
+import { formatRupiah } from '../utils/formatCurrency';
 
 export default function Checkout() {
   const { cart, clearCart } = useContext(CartContext);

@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import Navbar from './components/layout/Navbar';
-import Home from './pages/Home/Home';
-import Shop from './pages/Shop/Shop';
-import Cart from './pages/Cart/Cart';
-import Member from './pages/Member/Member';
-import Checkout from './pages/Checkout/Checkout';
+import Navbar from '../components/layout/Navbar';
+import Home from './pages/Home';
+import Shop from './pages/Shop';
+import Cart from './pages/Cart';
+import Member from './pages/Member';
+import Checkout from './pages/Checkout';
 import { CartProvider } from './contexts/CartContext';
 
 function App() {

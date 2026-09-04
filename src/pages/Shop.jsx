@@ -1,5 +1,5 @@
-import ProductCard from '../../components/features/ProductCard';
-import { supplements } from '../../utils/dummyData';
+import ProductCard from '../components/features/ProductCard';
+import { supplements } from '../utils/dummyData';
 
 export default function Shop() {
   return (

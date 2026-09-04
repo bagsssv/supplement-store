@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../../contexts/CartContext';
-import { formatRupiah } from '../../utils/formatCurrency';
+import { CartContext } from '../contexts/CartContext';
+import { formatRupiah } from '../utils/formatCurrency';
 
 export default function Cart() {
   const { cart, removeFromCart } = useContext(CartContext);
