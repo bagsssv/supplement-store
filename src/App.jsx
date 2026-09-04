@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import Navbar from './components/layout/Navbar';
+import Navbar from './components/Layout/Navbar';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
 import Member from './pages/Member';
 import Checkout from './pages/Checkout';
 import { CartProvider } from './contexts/CartContext';
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
             <Route path="/cart" element={<Cart />} /> 
             <Route path="/member" element={<Member />} />
             <Route path="/checkout" element={<Checkout />} />
-          </Routes>
+          </Routes> 
+          <Footer />
         </div>
       </BrowserRouter>
     </CartProvider>
