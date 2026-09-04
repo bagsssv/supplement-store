@@ -4,7 +4,7 @@ import { CartContext } from '../contexts/CartContext';
 import { formatRupiah } from '../utils/formatCurrency';
 
 export default function Cart() {
-  const { cart, removeFromCart } = useContext(CartContext);
+  const { cart, removeFromCart, updateQuantity } = useContext(CartContext);
 
   const totalAkhir = cart.reduce((total, item) => total + (item.memberPrice * item.quantity), 0);
 
@@ -33,7 +33,26 @@ export default function Cart() {
                       <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded-lg bg-neutral-700" />
                       <div>
                         <h3 className="text-white font-bold">{item.name}</h3>
-                        <p className="text-neutral-400 text-sm">Qty: {item.quantity}</p>
+                        
+                        {/* 2. INI YANG DIGANTI BRE: Tombol Plus Minus Cart */}
+                        <div className="flex items-center gap-2 bg-neutral-900 rounded-lg p-1 w-max mt-2 border border-neutral-700">
+                          <button 
+                            onClick={() => updateQuantity(item.id, 'decrease')}
+                            className="w-7 h-7 flex items-center justify-center bg-neutral-700 text-white rounded hover:bg-neutral-600 transition-colors"
+                          >
+                            -
+                          </button>
+                          <span className="text-white font-medium w-8 text-center text-sm">
+                            {item.quantity}
+                          </span>
+                          <button 
+                            onClick={() => updateQuantity(item.id, 'increase')}
+                            className="w-7 h-7 flex items-center justify-center bg-orange-500 text-black font-bold rounded hover:bg-orange-400 transition-colors"
+                          >
+                            +
+                          </button>
+                        </div>
+
                       </div>
                     </div>
 
