@@ -7,7 +7,7 @@ import Cart from './pages/Cart';
 import Member from './pages/Member';
 import Checkout from './pages/Checkout';
 import { CartProvider } from './contexts/CartContext';
-import Footer from './components/layout/Footer';
+import Footer from './components/Layout/Footer';
 
 function App() {
   return (
